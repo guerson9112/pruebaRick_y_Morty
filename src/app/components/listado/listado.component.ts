@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CharacterService } from 'src/app/core/services/character.service';
 import { StateService } from 'src/app/core/services/state.service';
 import { Character } from 'src/app/models/character';
+import  swal from 'sweetalert2';
 
 @Component({
   selector: 'app-listado',
@@ -32,7 +33,6 @@ export class ListadoComponent implements OnInit {
 
   getListado(){
 
-    console.log( this.listaSrv.regresarListaPersonajes() );
 
     this.dataSource = this.listaSrv.regresarListaPersonajes();
 
@@ -44,15 +44,14 @@ export class ListadoComponent implements OnInit {
 
       this.charactersSrv.getInfo(id).subscribe( r => {
 
-        console.log(r);
-
-        this.jsonData =  JSON.stringify(r);
+        this.jsonData =  r;
 
       } );
       
     } catch (error) {
 
       console.error(error);
+      swal.fire('Error', 'Hubo un problema consultando el servicio', 'error')
       
     }
 

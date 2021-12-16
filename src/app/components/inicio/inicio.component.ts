@@ -66,6 +66,7 @@ export class InicioComponent implements OnInit {
     } catch (error) {
 
       console.error(error);
+      swal.fire('Error', 'Hubo un problema consultando el servicio', 'error')
       
     }
 
