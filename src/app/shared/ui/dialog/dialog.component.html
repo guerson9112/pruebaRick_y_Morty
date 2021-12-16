@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Advertencia</h1>
+<div mat-dialog-content>
+  <p>¿Está seguro de querer enviar la información?</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onClose(false)">Cancelar</button>
+  <button mat-button (click)="onClose(true)" cdkFocusInitial>Enviar</button>
+</div>
