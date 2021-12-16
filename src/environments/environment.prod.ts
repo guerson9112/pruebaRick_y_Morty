@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  rickMortyApi: 'https://rickandmortyapi.com/api/character'
 };
