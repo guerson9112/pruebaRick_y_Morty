@@ -1,40 +1,36 @@
-<mat-toolbar color="primary">
 
-    <button mat-icon-button class="example-icon"  [matMenuTriggerFor]="menu2" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <mat-menu #menu2="matMenu">
-      <button mat-menu-item  routerLink="lista" routerLinkActive="router-link-active" >
-        <span>Ir a listado</span>
-      </button>
-    </mat-menu>
-    <span>Test</span>
-    
-</mat-toolbar>
 
 
 
 <mat-card  *ngFor="let charac of characters" class="custom-card">
-  <mat-card-title-group>
+  <mat-card-header>
+    <div mat-card-avatar class="header-image"></div>
     <mat-card-title>{{ charac.name }}</mat-card-title>
-    <img mat-card-sm-image [src]="charac.image" >
-  </mat-card-title-group>
+    <mat-card-subtitle>{{charac.species}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="charac.image" [alt]="charac.name">
   <mat-card-content>
+
+
+    <!-- <img mat-card-sm-image [src]="charac.image" > -->
+
+    <br>
 
     <mat-form-field class="input-full-width" appearance="fill">
       <mat-label>Descripción</mat-label>
       <input matInput placeholder="Descripción" [(ngModel)]="charac.description">
     </mat-form-field>
-    <button  mat-raised-button color="primary" (click)="enviar(charac)" [disabled]="charac.description == ''">Enviar</button>
+    <br>
+    
   </mat-card-content>
+  <mat-card-actions  class="card-button">
+    <button  mat-button color="primary" (click)="enviar(charac)" [disabled]="charac.description == ''">
+      Enviar
+      <mat-icon>send</mat-icon>
+    </button>
+  </mat-card-actions>
 </mat-card>
 
 
 
 
-
-<!-- <mat-list role="list">
-  <mat-list-item role="listitem">Item 1</mat-list-item>
-  <mat-list-item role="listitem">Item 2</mat-list-item>
-  <mat-list-item role="listitem">Item 3</mat-list-item>
-</mat-list> -->

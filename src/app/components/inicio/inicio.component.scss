@@ -1,9 +1,18 @@
 .custom-card{
-    max-width: 400px;
-    margin-bottom: 8px;
+    margin: auto;
+    max-width: 500px;
+    margin-bottom: 15px;
 }
 
-.input{
-    width: 80%;
-    
+.header-image {
+    background-size: cover;
+  }
+
+.input-full-width{
+    width: 100%;
+
+}
+
+.card-button{
+    text-align: center;
 }

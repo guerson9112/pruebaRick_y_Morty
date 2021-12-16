@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GuardarService } from 'src/app/core/services/guardar.service';
-import { TestService } from 'src/app/core/services/test.service';
+import { CharacterService } from 'src/app/core/services/character.service';
+import { StateService } from 'src/app/core/services/state.service';
 import { Character } from 'src/app/models/character';
 
 @Component({
@@ -18,8 +18,8 @@ export class ListadoComponent implements OnInit {
 
   constructor(
 
-    private ListaSrv: GuardarService,
-    private charactersSrv: TestService,
+    private listaSrv: StateService,
+    private charactersSrv: CharacterService,
 
   ) { }
 
@@ -32,13 +32,13 @@ export class ListadoComponent implements OnInit {
 
   getListado(){
 
-    console.log( this.ListaSrv.regresarLista() );
+    console.log( this.listaSrv.regresarListaPersonajes() );
 
-    this.dataSource = this.ListaSrv.regresarLista();
+    this.dataSource = this.listaSrv.regresarListaPersonajes();
 
   }
 
-  getInfoPersonaje(id: Number){
+  getInfoPersonaje(id: number){
 
     try {
 
